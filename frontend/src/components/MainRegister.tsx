@@ -1,7 +1,7 @@
-import { Typography, Button, Box, styled } from "@mui/material";
-import GoogleIcon from '@mui/icons-material/Google';
-import AppleIcon from '@mui/icons-material/Apple';
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
+import { Typography, Button, Box, styled } from "@mui/joy";
+import { FcGoogle } from "react-icons/fc";
+import { SiApple } from "react-icons/si";
+import { FaPhone } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 
@@ -24,18 +24,18 @@ const MainRegisterWrapperStyled = styled('div')({
 const MainRegister = () => {
     return (
         <MainRegisterWrapperStyled>
-            <Typography className="register__title" variant="h4">Join Soka today</Typography>
+            <Typography className="register__title" level="h2">Join Soka today</Typography>
             <Box>
-                <Button fullWidth variant="outlined" startIcon={<GoogleIcon />}>
+                <Button fullWidth variant="soft" startDecorator={<FcGoogle />}>
                     Sign up with Google
                 </Button>
-                <Button fullWidth variant="outlined" startIcon={<AppleIcon />}>
+                <Button fullWidth variant="soft" startDecorator={<SiApple />}>
                     Sign up with Apple
                 </Button>
-                <Button fullWidth variant="outlined" startIcon={<SmartphoneIcon />}>
+                <Button fullWidth variant="soft" startDecorator={<FaPhone/>}>
                     Sign up with phone or email
                 </Button>
-                <Typography variant="subtitle2">
+                <Typography level="body-xs">
                     By singing up you agree to the&nbsp;
                     <a href="#">Terms of Service </a>
                     and&nbsp;
@@ -43,7 +43,7 @@ const MainRegister = () => {
                     , including&nbsp;
                     <a href="#">Cookie Use.</a>
                 </Typography>
-                <Typography variant="subtitle2">
+                <Typography level="body-xs">
                     Already have an account?
                     <Link to="/auth/signin"> Log in</Link>
                 </Typography>

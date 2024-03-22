@@ -17,24 +17,24 @@ const App = () => {
             path: '/',
             element: <HomePage />
         },
-        // {
-        //     path: '/auth',
-        //     element: <AuthPage />,
-        //     children: [
-        //         {
-        //             index: true,
-        //             element: <MainRegister />,
-        //         },
-        //         {
-        //             path: 'signin',
-        //             element: <SignIn />
-        //         },
-        //         {
-        //             path: 'signup',
-        //             element: <SignUp />
-        //         }
-        //     ]
-        // }
+        {
+            path: '/auth',
+            element: <AuthPage />,
+            children: [
+                {
+                    index: true,
+                    element: <MainRegister />,
+                },
+                {
+                    path: 'signin',
+                    element: <SignIn />
+                },
+                {
+                    path: 'signup',
+                    element: <SignUp />
+                }
+            ]
+        }
     ])
 
     return (

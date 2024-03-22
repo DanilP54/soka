@@ -1,6 +1,8 @@
-import { Button, IconButton, styled, TextField } from "@mui/material";
+import { Button, IconButton, Input, Typography, styled } from "@mui/joy";
 import { Link } from "react-router-dom";
-import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5"
 
 
 const SignInWrapperStyled = styled('div')({
@@ -31,21 +33,30 @@ const SignInWrapperStyled = styled('div')({
 
 const SignIn = () => {
 
+
     return (
         <SignInWrapperStyled>
-            <h1 className='title'>Log in to Soka</h1>
+            <Typography textAlign={'center'} className='title' level="h2">Log in to Soka</Typography>
             <form className='form'>
-                <TextField variant="standard" label='Email' size='small' />
-                <TextField variant="standard" label='Password' size='small' />
-                <Button variant='contained'>Log In</Button>
+                <Input type="email" placeholder="Email" variant="soft" />
+                <Input type="password" placeholder="Password" variant="soft" endDecorator={<IconButton><IoEyeOutline /></IconButton>} />
+                <Button variant='soft'>Log In</Button>
             </form>
             <div className='footer'>
-                <Link to="/">Forgot Password?</Link>
-                <Link to="/auth/signup">Sign up to Twitter</Link>
+                <Link to="#">
+                    <Typography level="body-sm">
+                        Forgot Password?
+                    </Typography>
+                </Link>
+                <Link to="/auth/signup">
+                    <Typography level="body-sm">
+                        Sign up to Twitter
+                    </Typography>
+                </Link>
             </div>
             <Link className="link" to="/auth">
                 <IconButton>
-                    <KeyboardArrowLeftRoundedIcon color="primary" fontSize='medium' />
+                    <FaArrowLeftLong color="primary" fontSize='medium' />
                 </IconButton>
             </Link>
         </SignInWrapperStyled>

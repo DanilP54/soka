@@ -8,5 +8,6 @@ body {
     min-height: 100svh;
     margin: auto;
     max-width: 100vw;
+    background-color: rgb(252, 253, 252);
 }
 

@@ -1,7 +1,9 @@
-import { styled, Typography, Box, TextField, Button, IconButton } from "@mui/material";
+import { styled, Typography, Box, Button, IconButton, Input } from "@mui/joy";
 import DateSelects from "./DateSelects";
 import { Link } from "react-router-dom";
-import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5"
 
 const SignUpWrapperStyled = styled('div')({
     width: '23rem',
@@ -36,17 +38,17 @@ const SignUp = () => {
 
     return (
         <SignUpWrapperStyled>
-            <Typography className="signup__title" variant="h4">Create account</Typography>
+            <Typography className="signup__title" level="h2">Create account</Typography>
             <Box className="form__box">
-                <TextField variant="standard" label='Email' size='small' required />
-                <TextField variant="standard" label='Password' size='small' required />
+                <Input type="email" placeholder="Email" variant="soft" />
+                <Input type="password" placeholder="Password" variant="soft" endDecorator={<IconButton><IoEyeOutline /></IconButton>} />
                 <Box className="date__box">
                     <DateSelects />
-                    <Button variant="contained">Next</Button>
+                    <Button variant="soft">Next</Button>
                 </Box>
                 <Link className="link" to="/auth/signin">
                     <IconButton>
-                        <KeyboardArrowLeftRoundedIcon color="primary" fontSize='medium' />
+                        <FaArrowLeftLong color="primary" fontSize='medium' />
                     </IconButton>
                 </Link>
             </Box>

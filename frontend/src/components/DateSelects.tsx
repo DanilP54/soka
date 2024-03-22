@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material"
+import { Box, Select, Typography, Option, IconButton, Stack } from "@mui/joy"
 import { authBirthDate } from "../helpers/authBirthDate";
+import { IoMdClose } from "react-icons/io";
 
 const DateSelects = () => {
 
@@ -8,84 +9,117 @@ const DateSelects = () => {
     const [month, setMonth] = React.useState('');
     const [day, setDay] = React.useState('');
 
-    const handleChangeMonth = (e) => {
-        setMonth(e.target.value);
-    };
-
-    const handleChangeDay = (e) => {
-        setDay(e.target.value);
-    };
-
-    const handleChangeYear = (e) => {
-        setYear(e.target.value);
-    };
+    const actionMonth = React.useRef(null);
+    const actionYear = React.useRef(null);
+    const actionDay = React.useRef(null);
 
     const { renderMonths, renderDays, renderYears } = authBirthDate(month, year)
 
-
     return (
-        <>
-            <Typography className="date__box_title" variant="h6" fontSize={17} fontWeight={600}>Date of birth</Typography>
-            <Box sx={{ minWidth: 120 }} display={'flex'} columnGap={1}>
-                <FormControl fullWidth size="small" required>
-                    <InputLabel id="month-label">Month</InputLabel>
-                    <Select
-                        labelId="month-label"
-                        id="month-select"
-                        value={month}
-                        label="Month"
-                        autoWidth
-                        onChange={handleChangeMonth}
-                        MenuProps={{transitionDuration: 0.1}}  
-                    >
-                        {
-                            renderMonths()
-                                .map((month, index) => (
-                                    <MenuItem key={index + 1} value={index + 1}>{month}</MenuItem>
-                                ))
-                        }
-                    </Select>
-                </FormControl>
-                <FormControl fullWidth size="small" required>
-                    <InputLabel id="year-label">Year</InputLabel>
-                    <Select
-                        labelId="year-label"
-                        id="year-select"
-                        value={year}
-                        label="Year"
-                        autoWidth
-                        onChange={handleChangeYear}
-                        MenuProps={{transitionDuration: 0.1}} 
-                    >
-                        {
-                            renderYears()
-                                .map((year, index) => (
-                                    <MenuItem key={index + 1} value={year}>{year}</MenuItem>
-                                ))
-                        }
-                    </Select>
-                </FormControl>
-                <FormControl fullWidth size="small" required>
-                    <InputLabel id="day-label">Day</InputLabel>
-                    <Select
-                        labelId="day-label"
-                        id="day-select"
-                        value={day}
-                        label="Day"
-                        autoWidth
-                        onChange={handleChangeDay}
-                        MenuProps={{transitionDuration: 0.1}}
-                    >
-                        {
-                            renderDays()
-                                .map((_, index) => (
-                                    <MenuItem key={index + 1} value={index + 1}>{index + 1}</MenuItem>
-                                ))
-                        }
-                    </Select>
-                </FormControl>
-            </Box>
-        </>
+        <Stack spacing={3}>
+            <Typography className="date__box_title" level="body-lg" fontSize={17} fontWeight={600}>Date of birth</Typography>
+            <Box height={40} sx={{ minWidth: 120 }} display={'flex'} justifyContent={'space-between'} columnGap={1}>
+                <Select
+                    action={actionMonth}
+                    value={month}
+                    placeholder="Month..."
+                    onChange={(e, newValue) => setMonth(newValue)}
+                    {...(month && {
+                        endDecorator: (
+                            <IconButton
+                                size="sm"
+                                variant="plain"
+                                color="neutral"
+                                onMouseDown={(event) => {
+                                    event.stopPropagation();
+                                }}
+                                onClick={() => {
+                                    setMonth('');
+                                    actionMonth.current?.focusVisible();
+                                }}
+                            >
+                                <IoMdClose />
+                            </IconButton>
+                        ),
+                        indicator: null,
+                    })}
+                    sx={{ minWidth: 110 }}
+                >
+                    {
+                        renderMonths()
+                            .map((month, index) => (
+                                <Option key={index + 1} value={index + 1}>{month}</Option>
+                            ))
+                    }
+                </Select>
+                <Select
+                    action={actionYear}
+                    value={year}
+                    placeholder="Year..."
+                    onChange={(e, newValue) => setYear(newValue)}
+                    {...(year && {
+                        endDecorator: (
+                            <IconButton
+                                size="sm"
+                                variant="plain"
+                                color="neutral"
+                                onMouseDown={(event) => {
+                                    event.stopPropagation();
+                                }}
+                                onClick={() => {
+                                    setYear('');
+                                    actionYear.current?.focusVisible();
+                                }}
+                            >
+                                <IoMdClose />
+                            </IconButton>
+                        ),
+                        indicator: null,
+                    })}
+                    sx={{ minWidth: 110 }}
+                >
+                    {
+                        renderYears()
+                            .map((year, index) => (
+                                <Option key={index + 1} value={year}>{year}</Option>
+                            ))
+                    }
+                </Select>
+                <Select
+                    action={actionDay}
+                    value={day}
+                    placeholder="Day..."
+                    onChange={(e, newValue) => setDay(newValue)}
+                    {...(day && {
+                        endDecorator: (
+                            <IconButton
+                                size="sm"
+                                variant="plain"
+                                color="neutral"
+                                onMouseDown={(event) => {
+                                    event.stopPropagation();
+                                }}
+                                onClick={() => {
+                                    setDay('');
+                                    actionDay.current?.focusVisible();
+                                }}
+                            >
+                                <IoMdClose />
+                            </IconButton>
+                        ),
+                        indicator: null,
+                    })}
+                    sx={{ minWidth: 110 }}
+                >
+                    {
+                        renderDays()
+                            .map((_, index) => (
+                                <Option key={index + 1} value={index + 1}>{index + 1}</Option>
+                            ))
+                    }
+                </Select>
+            </Box >
+        </Stack>
     )
 }
 
