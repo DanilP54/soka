@@ -1,4 +1,3 @@
-
 import { styled } from '@mui/joy';
 import main_image from '../assets/image/main_image.webp';
 import logo from '../assets/svg/logo.svg';
@@ -6,12 +5,9 @@ import AdditionalInfo from "../components/AdditionalInfo.tsx";
 import { Outlet } from "react-router-dom";
 
 
-
-
 const AuthPageWrapperStyled = styled('div')({
     display: 'grid',
     height: '100vh',
-    overflow: 'hidden',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateRows: '1fr auto',
     '& .image__box': {

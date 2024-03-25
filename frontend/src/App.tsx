@@ -8,13 +8,13 @@ import AuthPage from "./pages/AuthPage.tsx";
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage.tsx';
-
-
+import store from './redux/store.ts';
+import { Provider } from 'react-redux';
 const App = () => {
 
     const routes = createBrowserRouter([
         {
-            path: '/',
+            path: '/main',
             element: <HomePage />
         },
         {
@@ -38,9 +38,11 @@ const App = () => {
     ])
 
     return (
-        <CssVarsProvider theme={theme}>
-            <RouterProvider router={routes} />
-        </CssVarsProvider>
+        <Provider store={store}>
+            <CssVarsProvider theme={theme}>
+                <RouterProvider router={routes} />
+            </CssVarsProvider>
+        </Provider>
     )
 }
 

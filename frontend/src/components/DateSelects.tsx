@@ -9,7 +9,7 @@ const DateSelects = () => {
     const [month, setMonth] = React.useState('');
     const [day, setDay] = React.useState('');
 
-    const actionMonth = React.useRef(null);
+    const actionMonth = React.useRef<HTMLElement>(null);
     const actionYear = React.useRef(null);
     const actionDay = React.useRef(null);
 
@@ -43,7 +43,7 @@ const DateSelects = () => {
                         ),
                         indicator: null,
                     })}
-                    sx={{ minWidth: 110 }}
+                    sx={{ minWidth: 140 }}
                 >
                     {
                         renderMonths()
@@ -109,7 +109,7 @@ const DateSelects = () => {
                         ),
                         indicator: null,
                     })}
-                    sx={{ minWidth: 110 }}
+                    sx={{ minWidth: 90}}
                 >
                     {
                         renderDays()

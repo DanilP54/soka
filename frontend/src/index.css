@@ -11,3 +11,7 @@ body {
     background-color: rgb(252, 253, 252);
 }
 
+
+#root {
+    height: 100svh;
+}

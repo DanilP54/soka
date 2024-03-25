@@ -1,15 +1,17 @@
 import { Box, styled } from "@mui/joy";
-import AdditionalInfo from "./AdditionalInfo";
+import AdditionalInfo from "../../AdditionalInfo";
 
 
 const AsideFooterWrapperStyled = styled('div')({
-
+    height: '100%',
+    display: 'flex',
+    alignItems: 'end',
 })
 
-const AsideFooter = () => {
+const FooterBlock = () => {
     return (
         <AsideFooterWrapperStyled>
-            <Box width={'100%'} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} columnGap={2} padding={1}>
+            <Box  width={'100%'} display={'flex'} flexWrap={'wrap'} justifyContent={'center'} columnGap={2} padding={1}>
                 <AdditionalInfo>Terms of Service</AdditionalInfo>
                 <AdditionalInfo>Privacy Policy</AdditionalInfo>
                 <AdditionalInfo>Cookie Policy</AdditionalInfo>
@@ -22,4 +24,4 @@ const AsideFooter = () => {
 }
 
 
-export default AsideFooter;
+export default FooterBlock;
