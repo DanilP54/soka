@@ -4,7 +4,7 @@ import { AiOutlineEllipsis } from "react-icons/ai";
 const AccountMenu = () => {
     return (
         <Box display={'flex'} alignItems={'center'} columnGap={2}>
-            <Avatar src="https://i.yapx.ru/PWwHk.jpg" />
+            <Avatar />
             <Stack>
                 <Typography fontSize={13} fontWeight={500}>Mushtariy</Typography>
                 <Typography fontSize={12}>@Mushtar565266</Typography>

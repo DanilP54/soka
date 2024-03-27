@@ -4,17 +4,15 @@ import FormPost from "./form_post/FormPost";
 const avatarka = 'https://kaifolog.ru/uploads/posts/2014-12/1418387647_028.jpg'
 
 const AddPostWrapperStyled = styled('div')({
-    marginTop: 20, 
     height: '100%',
     width: '100%',
     padding: '30px',
     border:  '1px solid rgba(0,0,0, .1)',
-    borderRadius: '15px',
+    borderRadius: '5px',
+    boxShadow: '0 5px 5px rgba(0,0,0, .1)',
 })
 
 const CreatePostForm = () => {
-
-
 
     return (
         <AddPostWrapperStyled>

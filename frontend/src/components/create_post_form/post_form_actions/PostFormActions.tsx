@@ -6,6 +6,9 @@ import { VscGraph } from "react-icons/vsc";
 import { LuSmile } from "react-icons/lu";
 
 const PostFormActions = () => {
+
+    
+
     return (
         <>
             <ButtonGroup variant="soft" spacing={1}>

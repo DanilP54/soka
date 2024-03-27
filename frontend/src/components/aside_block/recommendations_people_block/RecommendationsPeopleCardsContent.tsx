@@ -32,7 +32,7 @@ const RecommendationsPeopleCardsContent = () => {
                             <Stack spacing={3}>
                                 <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
                                     <Box display={'flex'} alignItems={'center'} columnGap={2}>
-                                        <Avatar src={avatar} />
+                                        <Avatar />
                                         <Stack>
                                             <Typography fontSize={13} fontWeight={500}>{fullName}</Typography>
                                             <Typography fontSize={12}>{username}</Typography>

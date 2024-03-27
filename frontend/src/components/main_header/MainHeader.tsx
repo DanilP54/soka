@@ -1,14 +1,15 @@
-import { Box, Divider, IconButton, Typography, styled } from "@mui/joy";
+import { Box, IconButton, Typography, styled } from "@mui/joy";
 import { GiCursedStar } from "react-icons/gi";
 
 const HeaderWrapperStyled = styled('div')({
-    position: 'sticky',
-    top: 10,
+    position: 'fixed',
+    marginTop: '10px',
+    width: '576px',
     zIndex: 111,
     backgroundColor: 'rgba(fff,fff,fff, .5)',
     backdropFilter: 'blur(9px)',
     border: '1px solid rgba(0,0,0, .1)',
-    borderRadius: '10px'
+    borderRadius: '10px',   
 })
 
 const MainHeader = () => {
@@ -20,7 +21,7 @@ const MainHeader = () => {
                 height={50}
                 display={'flex'}
                 alignItems={'center'}
-                justifyContent={'space-between'}
+                justifyContent={'space-between'}      
             >
                 <Typography
                     fontSize={17}

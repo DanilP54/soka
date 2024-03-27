@@ -26,6 +26,9 @@ const HomePageWrapperStyled = styled('div')({
 
 
 const HomePage = () => {
+
+
+
     return (
         <>
             <HomePageWrapperStyled>
@@ -34,21 +37,13 @@ const HomePage = () => {
                         <Grid className="grid__nav" xs={3}>
                             <NavMenu />
                         </Grid>
-                        <Grid sx={{
-                            overflowY: 'auto',
-                            height: '100%',
-                            scrollbarWidth: 'none',
-                            overflowX: 'hidden'
-                        }} className='grid__main' component={'main'} xs={6}>
+                        <Grid sx={{ height: '100%' }}
+                            className='grid__main'
+                            component={'main'}
+                            xs={6}
+                        >
                             <MainHeader />
-                            <Box sx={{
-                                boxShadow: '0 10px 20px rgba(0,0,0, .1)',
-                            }}>
-                                <CreatePostForm />
-                            </Box>
-                            <Box mt={2}>
-                                <PostsList />
-                            </Box>
+                            <PostsList />
                         </Grid>
                         <Grid xs={3}>
                             <AsideBlocks />
