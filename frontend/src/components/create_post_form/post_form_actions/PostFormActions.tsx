@@ -7,7 +7,7 @@ import { LuSmile } from "react-icons/lu";
 
 const PostFormActions = () => {
 
-    
+
 
     return (
         <>
@@ -17,19 +17,19 @@ const PostFormActions = () => {
                     border: 'none',
                     backgroundColor: 'transparent',
                 }}>
-                    <MdGifBox size={20} />
+                    <MdGifBox size={18} />
                 </IconButton>
                 <IconButton sx={{
                     border: 'none',
                     backgroundColor: 'transparent',
                 }}>
-                    <VscGraph size={20} />
+                    <VscGraph size={18} />
                 </IconButton>
                 <IconButton sx={{
                     border: 'none',
                     backgroundColor: 'transparent',
                 }}>
-                    <LuSmile size={20} />
+                    <LuSmile size={18} />
                 </IconButton>
             </ButtonGroup>
         </>

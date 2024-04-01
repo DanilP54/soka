@@ -1,12 +1,13 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import authSlice from "./features/auth/authSlice";
-import { tweetsApi } from "./features/tweets/tweetsApi";
+import { postsApi } from "./features/tweets/postsApi";
 
 
 const rootReducer = combineReducers({
     auth: authSlice,
-    [tweetsApi.reducerPath]: tweetsApi.reducer,
+    [postsApi.reducerPath]: postsApi.reducer,
 })
 
 
 export default rootReducer;
+

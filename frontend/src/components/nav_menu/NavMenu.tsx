@@ -1,10 +1,8 @@
+import React from "react";
+
 import {
     Box,
-    List,
-    ListItemButton,
-    ListItemDecorator,
     Stack,
-    Typography,
     styled
 } from "@mui/joy";
 
@@ -17,26 +15,27 @@ import {
 } from "react-icons/pi";
 
 import { IoSearchSharp } from "react-icons/io5";
-
 import { MdOutlinePeopleAlt } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { NavLink } from "react-router-dom";
 import logo from '../../assets/svg/logo.svg';
 import AccountMenu from "../account_menu/AccountMenu";
 import CreatePostModalButton from "../create_post_button_modal/CreatePostModalButton";
+import NavItem from "./NavItem";
 
 const SIZE_ICON = 20
 
-const navList: {
+export interface NavManuType {
     id: number;
     text: string;
-    icon?: JSX.Element;
+    icon: JSX.Element;
     link: string;
-}[] = [
+}
+
+const navList: NavManuType[] = [
         {
             id: 0,
             text: 'Главная',
-            icon: <PiHouseBold size={SIZE_ICON} />,
+            icon: <PiHouseBold className="icon" size={SIZE_ICON} />,
             link: '/main'
         },
         {
@@ -84,13 +83,12 @@ const navList: {
     ]
 
 const NavListWrapperStyled = styled('div')({
-    height: '100%'
-
+    position: 'fixed',
+    top: 0,
+    height: '100%',
 })
 
-
-
-const NavMenu = () => {
+const NavMenu: React.FC = () => {
     return (
         <NavListWrapperStyled>
             <Stack height={'inherit'} padding={2} spacing={3} justifyContent={'space-between'}>
@@ -98,24 +96,11 @@ const NavMenu = () => {
                     <img width={30} height={30} src={logo} alt="logo" />
                 </Box>
                 <Box>
-                    <List sx={{ display: 'flex', flexDirection: 'column', rowGap: '10px' }} className="nav__list">
-                        {
-                            navList.map(({ text, icon, link, id }) => (
-                                <NavLink style={{ textDecoration: 'none' }}
-                                    key={id}
-                                    className="nav__list_item_link"
-                                    to={link}
-                                >
-                                    <ListItemButton sx={{ display: 'flex', alignItems: 'center', borderRadius: '15px', minHeight: '40px' }} className="nav__list_item">
-                                        <ListItemDecorator className="nav__list_item_icon">
-                                            {icon}
-                                        </ListItemDecorator>
-                                        <Typography className="text" level="title-md" fontWeight={600}>{text}</Typography>
-                                    </ListItemButton>
-                                </NavLink>
-                            ))
-                        }
-                    </List>
+                    {
+                        navList.map(item => (
+                            <NavItem key={item.id} item={item} />
+                        ))
+                    }
                 </Box>
                 <Stack height={'inherit'} sx={{ flexGrow: 1, justifyContent: 'space-between' }}>
                     <CreatePostModalButton />

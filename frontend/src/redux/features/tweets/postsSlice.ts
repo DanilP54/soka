@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-interface TweetsState {
+interface postsState {
     fullname: string | null;
     username: string | null;
     avatar: string | null;
@@ -11,7 +11,7 @@ interface TweetsState {
     id: string | null;
 }
 
-const initialState: TweetsState = {
+const initialState: postsState = {
     fullname: null,
     username: null,
     avatar: null,
@@ -22,8 +22,8 @@ const initialState: TweetsState = {
 }
 
 
-const tweetsSlice = createSlice({
-    name: 'tweets',
+const postsSlice = createSlice({
+    name: 'posts',
     initialState,
     reducers: {}
 })
@@ -31,4 +31,4 @@ const tweetsSlice = createSlice({
 
 
 
-export default tweetsSlice.reducer
+export default postsSlice.reducer

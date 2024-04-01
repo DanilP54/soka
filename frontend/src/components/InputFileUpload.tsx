@@ -35,7 +35,7 @@ const InputFileUpload = () => {
           margin: 0
         }
       }}
-      startDecorator={<FaRegImage size={20}/>}
+      startDecorator={<FaRegImage size={18}/>}
     >
       <VisuallyHiddenInput type="file" />
     </Button>

@@ -9,7 +9,7 @@ const TrendsBlock = () => {
             backgroundColor: '#F7F9F9',
             border: '1px solid #CDD7E1',
             borderRadius: '10px',
-            padding: '10px 15px'
+            padding: '10px 15px',
         }}
             display={'flex'}
             alignItems={'center'}
@@ -21,6 +21,7 @@ const TrendsBlock = () => {
                 </IconButton>
             </Box>
             <Box width={'100%'}>
+                <TrendsCardsContent />
                 <TrendsCardsContent />
                 
             </Box>
